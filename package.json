@@ -1,0 +1,25 @@
+{
+  "name": "js-chart",
+  "version": "0.0.1",
+  "description": "直观的显示出JS的引用链",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "chart",
+    "引用链",
+    "分析工具"
+  ],
+  "author": "ugrg",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^4.1.0",
+    "open-browsers": "^1.2.2",
+    "progress": "^2.0.3",
+    "serve-handler": "^6.1.2"
+  }
+}
