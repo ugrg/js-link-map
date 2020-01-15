@@ -4,6 +4,7 @@
  */
 const myChart = window.echarts.init(document.querySelector("#canvas"));
 myChart.showLoading();
+window.addEventListener("resize", () => myChart.resize());
 fetch("/data").then((res) => res.json()).then(res => {
   myChart.hideLoading();
   myChart.setOption(option = {
@@ -17,13 +18,7 @@ fetch("/data").then((res) => res.json()).then(res => {
         type: "graph",
         layout: "force",
         // progressiveThreshold: 700,
-        data: res.data.map(function (node) {
-          return {
-            id: node.id,
-            name: node.id,
-            symbolSize: node.size
-          };
-        }),
+        data: res.data,
         edges: res.edges,
         emphasis: {
           label: {
@@ -34,8 +29,8 @@ fetch("/data").then((res) => res.json()).then(res => {
         roam: true,
         focusNodeAdjacency: true,
         lineStyle: {
-          width: 3,
-          curveness: 0.3,
+          width: 0.5,
+          curveness: 0.1,
           opacity: 0.7
         }
       }
